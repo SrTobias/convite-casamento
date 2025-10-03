@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="pt">
 <head>
-  <!-- Coolvetica font import -->
-  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/coolvetica" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Background com vCard</title>
-  <style>
+<!-- Coolvetica font import -->
+<link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Background com vCard</title>
+<style>
     body, html {
       font-family: 'Coolvetica', Arial, Helvetica, sans-serif;
     }
@@ -94,22 +95,34 @@
         margin-bottom: 3%;
       }
     }
-  </style>
+  
+@media (max-width: 768px) {
+  iframe {
+    width: 100% !important;
+    height: 400px !important;
+    position: static !important;
+    margin: 20px auto !important;
+    display: block !important;
+  }
+}
+@media (min-width: 769px) {
+  iframe {
+    width: 350px !important;
+    height: 500px !important;
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    background: white;
+  }
+}
+</style>
 </head>
 <body>
-  <div class="background-wrapper">
-    <div class="vcard">
-      <div class="vcard-info">
-  <h1>Rute & Tiago</h1>
-  <h2>💍 07/11/2025 19h30</h2>
-  <p><b>Comes e bebes:</b> <a href="https://maps.google.com/?q=Restaurante+Pão+de+Canela,Lisboa,Portugal" target="_blank" rel="noopener noreferrer">Pão de Canela</a></p>
-  <div id="countdown"></div>
-      </div>
-      <div class="vcard-mapa">
-        <!-- Mapa removido -->
-      </div>
-    </div>
-  </div>
+<div class="background-wrapper">
+
+</div>
 <script>
   const targetDate = new Date("Nov 7, 2025 19:30:00").getTime();
   const timer = setInterval(function() {
