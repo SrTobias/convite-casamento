@@ -73,6 +73,14 @@
     transform: scale(1.1);
   }
 
+  /* Tornar a imagem responsiva */
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
   /* Responsividade */
   @media (max-width: 768px) {
     body {
@@ -85,6 +93,9 @@
     }
     .beer-button img {
       width: 50px;
+    }
+    .responsive-image {
+      width: 90%;
     }
   }
 </style>
@@ -104,6 +115,11 @@
     <button class="beer-button" onclick="window.open('https://www.sagres.pt','_blank')">
       <img src="beer.png" alt="🍺"/>
     </button>
+
+    <!-- Adicionando uma imagem responsiva -->
+    <div>
+      <img src="background.jpg" alt="Imagem de fundo" class="responsive-image">
+    </div>
 
   </div>
 </body>
