@@ -1,147 +1,108 @@
 <!DOCTYPE html>
-
 <html lang="pt">
 <head>
 <!-- Coolvetica font import -->
 <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Background com vCard</title>
+<title>Casamento Tiago & Rute</title>
 <style>
-    body, html {
-      font-family: 'Coolvetica', Arial, Helvetica, sans-serif;
-    }
-    html, body {
-      box-sizing: border-box;
-      background: #fff;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden;
-    }
-    body {
-      min-height: 100vh;
-      min-width: 100vw;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-      position: relative;
-      overflow: hidden;
-      background: #fff;
-      background-image: url('background.jpg');
-  background-size: 101vw 101vh;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .fullscreen-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-    object-fit: contain;
+  body, html {
+    font-family: 'Coolvetica', Arial, Helvetica, sans-serif;
+  }
+  html, body {
+    box-sizing: border-box;
     background: #fff;
-    z-index: 0;
-    pointer-events: none;
-    user-select: none;
-    }
-
-    .background-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  position: relative;
-  z-index: 2;
-    }
-
-    .vcard {
-  margin-left: 2vw;
-  margin-bottom: 0;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  max-width: 90%;
-  position: relative;
-  z-index: 3;
-  display: block;
-  min-width: 220px;
-  max-width: 350px;
-  min-height: unset;
-  padding: 10px 16px;
-  /* Conteúdo textual à esquerda, mapa à direita */
-  /* Responsivo para telas pequenas */
-
-.vcard-info {
-  width: 100%;
-  min-width: unset;
-}
-.vcard-mapa {
-  display: none;
-}
-    }
-
-    @media (max-width: 768px) {
-      .vcard {
-        flex-direction: column;
-        gap: 10px;
-        padding: 8px;
-        font-size: 0.9em;
-        margin-left: 3%;
-        margin-bottom: 3%;
-      }
-    }
-  
-@media (max-width: 768px) {
-  iframe {
-    width: 100% !important;
-    height: 400px !important;
-    position: static !important;
-    margin: 20px auto !important;
-    display: block !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
   }
-}
-@media (min-width: 769px) {
-  iframe {
-    width: 350px !important;
-    height: 500px !important;
-    position: fixed !important;
-    bottom: 20px !important;
-    left: 20px !important;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    background-image: url('background.jpg');
+    background-size: 101vw 101vh;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .background-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* VCard em baixo à esquerda */
+  .vcard {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 12px 18px;
     border-radius: 8px;
-    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    max-width: 300px;
+    font-size: 0.95em;
+    z-index: 3;
   }
-}
+
+  /* Botão cerveja no canto inferior direito */
+  .beer-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 0.2s;
+  }
+  .beer-button img {
+    width: 60px;
+    height: auto;
+  }
+  .beer-button:hover {
+    transform: scale(1.1);
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .vcard {
+      max-width: 90%;
+      left: 5%;
+      bottom: 5%;
+    }
+    .beer-button img {
+      width: 50px;
+    }
+  }
 </style>
 </head>
 <body>
-<div class="background-wrapper">
+  <div class="background-wrapper">
 
-</div>
-<script>
-  const targetDate = new Date("Nov 7, 2025 19:30:00").getTime();
-  const timer = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+    <!-- VCard -->
+    <div class="vcard">
+      <strong>Tiago & Rute</strong><br>
+      📍 Local: Pão de canela<br>
+      📅 7 Novembro 2025 - 19h30<br>
+      💌 Contamos contigo!
+    </div>
 
-    if (distance > 0) {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    <!-- Botão cerveja -->
+    <button class="beer-button" onclick="window.open('https://www.sagres.pt','_blank')">
+      <img src="beer.jpg" alt="🍺"/>
+    </button>
 
-      document.getElementById("countdown").innerHTML =
-        `⏳ Faltam ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    } else {
-      document.getElementById("countdown").innerHTML = "🎉 Chegou o grande dia!";
-      clearInterval(timer);
-    }
-  }, 1000);
-</script>
+  </div>
 </body>
 </html>
