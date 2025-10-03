@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<!-- Coolvetica font import -->
+<link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Casamento Tiago & Rute</title>
+<style>
+  body, html {
+    font-family: 'Coolvetica', Arial, Helvetica, sans-serif;
+  }
+  html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    background-image: url('background.jpg');
+    background-size: cover;          /* Mantém proporção */
+    background-repeat: no-repeat;
+    background-position: center;     /* Centra a imagem */
+  }
+
+  .background-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* VCard em baixo à esquerda */
+  .vcard {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    max-width: 300px;
+    font-size: 0.95em;
+    z-index: 3;
+  }
+
+  /* Botão cerveja no canto inferior direito */
+  .beer-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 0.2s;
+  }
+  .beer-button img {
+    width: 60px;
+    height: auto;
+  }
+  .beer-button:hover {
+    transform: scale(1.1);
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    body {
+      background-position: top center; /* foca parte de cima da imagem em mobile */
+    }
+    .vcard {
+      max-width: 90%;
+      left: 5%;
+      bottom: 5%;
+    }
+    .beer-button img {
+      width: 50px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="background-wrapper">
+
+    <!-- VCard -->
+    <div class="vcard">
+      <strong>Tiago & Rute</strong><br>
+      📍 Local: Quinta dos Sonhos<br>
+      📅 7 Novembro 2025 - 19h30<br>
+      💌 Contamos contigo!
+    </div>
+
+    <!-- Botão cerveja -->
+    <button class="beer-button" onclick="window.open('https://www.sagres.pt','_blank')">
+      <img src="beer.png" alt="🍺"/>
+    </button>
+
+  </div>
+</body>
+</html>
