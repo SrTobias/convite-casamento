@@ -1,108 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<!-- Coolvetica font import -->
-<link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Casamento Tiago & Rute</title>
-<style>
-  body, html {
-    font-family: 'Coolvetica', Arial, Helvetica, sans-serif;
-  }
-  html, body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-  }
-  body {
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    background: #fff;
-    background-image: url('background.jpg');
-    background-size: cover;          /* Mantém proporção */
-    background-repeat: no-repeat;
-    background-position: center;     /* Centra a imagem */
-  }
+  <!-- Coolvetica font import com swap para performance -->
+  <link href="https://fonts.cdnfonts.com/css/coolvetica?display=swap" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casamento Tiago & Rute</title>
+  <style>
+    html, body {
+      font-family: 'Coolvetica', Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
 
-  .background-wrapper {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    z-index: 2;
-  }
-
-  /* VCard em baixo à esquerda */
-  .vcard {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 12px 18px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    max-width: 300px;
-    font-size: 0.95em;
-    z-index: 3;
-  }
-
-  /* Botão cerveja no canto inferior direito */
-  .beer-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 3;
-    transition: transform 0.2s;
-  }
-  .beer-button img {
-    width: 60px;
-    height: auto;
-  }
-  .beer-button:hover {
-    transform: scale(1.1);
-  }
-
-  /* Tornar a imagem responsiva */
-  .responsive-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-  /* Responsividade */
-  @media (max-width: 768px) {
     body {
-      background-position: top center; /* foca parte de cima da imagem em mobile */
+      min-height: 100vh;
+      min-width: 100vw;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: #fff;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
     }
+
+    .background-wrapper {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
     .vcard {
-      max-width: 90%;
-      left: 5%;
-      bottom: 5%;
+      position: absolute;
+      bottom: 32px;
+      left: 32px;
+      background: rgba(255,255,255,0.92);
+      padding: 16px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      max-width: 320px;
+      font-size: 1.1em;
+      z-index: 3;
+      transition: all 0.2s;
+      line-height: 1.55;
+      letter-spacing: 0.01em;
     }
+
+    .beer-button {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 3;
+      transition: transform 0.2s;
+      width: 64px;
+      height: 64px;
+      padding: 0;
+    }
+
     .beer-button img {
-      width: 50px;
+      width: 100%;
+      height: auto;
+      display: block;
     }
-    .responsive-image {
-      width: 90%;
+
+    .beer-button:active {
+      transform: scale(0.97);
     }
-  }
-</style>
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .vcard {
+        max-width: 92vw;
+        left: 4vw;
+        bottom: 8vw;
+        font-size: 1em;
+        padding: 12px 8px;
+      }
+      .beer-button {
+        right: 4vw;
+        bottom: 8vw;
+        width: 56px;
+        height: 56px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .vcard {
+        left: 5vw;
+        bottom: 12vw;
+        font-size: 0.97em;
+        padding: 8px 4px;
+      }
+      .beer-button {
+        right: 5vw;
+        bottom: 5vw;
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="background-wrapper">
-
     <!-- VCard -->
     <div class="vcard">
       <strong>Tiago & Rute</strong><br>
@@ -112,15 +125,9 @@
     </div>
 
     <!-- Botão cerveja -->
-    <button class="beer-button" onclick="window.open('https://www.sagres.pt','_blank')">
-      <img src="beer.png" alt="🍺"/>
+    <button class="beer-button" onclick="window.open('https://www.sagres.pt','_blank')" aria-label="Abrir site da cerveja">
+      <img src="beer.png" alt="Ícone de cerveja"/>
     </button>
-
-    <!-- Adicionando uma imagem responsiva -->
-    <div>
-      <img src="background.jpg" alt="Imagem de fundo" class="responsive-image">
-    </div>
-
   </div>
 </body>
 </html>
