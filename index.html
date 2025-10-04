@@ -37,9 +37,51 @@
       flex-direction: column;
       justify-content: flex-end;
     }
+    /* COUNTDOWN */
+    #countdown {
+      position: absolute;
+      right: 18%;       /* ajusta horizontal */
+      top: 45%;         /* ajusta vertical */
+      font-family: 'Coolvetica', Arial, sans-serif;
+      font-size: 40px; /* ajusta tamanho */
+      font-weight: 5%;
+      text-align: 100%;
+      line-height: 1;
+    }
+    #countdown .num {
+      color: #f9a825; /* números a laranja */
+    }
   </style>
 </head>
 <body>
   <div class="background-wrapper"></div>
+
+  <div id="countdown"></div>
+
+  <script>
+    // Data do casamento
+    const weddingDate = new Date("Nov 7, 2025 19:30:00").getTime();
+
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `<span class="num">${days}</span> DIAS 
+         <span class="num">${hours}</span>H 
+         <span class="num">${minutes}</span>M 
+         <span class="num">${seconds}</span>S`;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "🎉 O GRANDE DIA CHEGOU 🎉";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
