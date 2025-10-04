@@ -56,8 +56,8 @@
     @media (max-width: 768px) {
       #countdown {
         font-size: 6vw;  /* maior no telemóvel */
-        top: 46%;         /* desce um pouco */
-        right: 11%;        /* mais perto da margem */
+        top: 49%;         /* desce um pouco */
+        right: 10%;        /* mais perto da margem */
       }
     }
   </style>
@@ -81,7 +81,7 @@
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML =
-        `<span class="num">${days}</span> DIAS 
+        `<span class="num">${days}</span> D 
          <span class="num">${hours}</span>H 
          <span class="num">${minutes}</span>M 
          <span class="num">${seconds}</span>S`;
