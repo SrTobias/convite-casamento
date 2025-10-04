@@ -40,25 +40,41 @@
     /* COUNTDOWN */
     #countdown {
       position: absolute;
-      right: 17%;         /* ajusta horizontal */
-      top: 44%;           /* ajusta vertical */
+      right: 17%;         
+      top: 44%;           
       font-family: 'Coolvetica', Arial, sans-serif;
-      font-size: 5vw;     /* responsivo (8% da largura do ecrã) */
-      font-weight: 5vw;
+      font-size: 5vw;     
+      font-weight: bold;
       text-align: right;
       line-height: 1;
     }
     #countdown .num {
-      color: #f9a825; /* números a laranja */
+      color: #f9a825; 
     }
-
-    /* Ajustes só para telemóvel */
     @media (max-width: 768px) {
       #countdown {
-        font-size: 6vw;  /* maior no telemóvel */
-        top: 49%;         /* desce um pouco */
-        right: 10%;        /* mais perto da margem */
+        font-size: 6vw;  
+        top: 49%;         
+        right: 10%;       
       }
+    }
+    /* LOCALIZAÇÃO */
+    #localizacao {
+      position: absolute;
+      right: 63%;        /* ajusta horizontal */
+      bottom: 5%;       /* ajusta vertical */
+      width: 175px;     /* largura da box */
+      height: 125px;    /* altura da box */
+      border: 2px solid #f9a825;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+    #localizacao iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
   </style>
 </head>
@@ -66,6 +82,14 @@
   <div class="background-wrapper"></div>
 
   <div id="countdown"></div>
+
+  <!-- Box de Localização -->
+  <div id="localizacao">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.494110978813!2d-9.154555023560395!3d38.71497095744673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19337dcd328d49%3A0x876d7aba84f474c8!2sP%C3%A3o%20de%20Canela!5e1!3m2!1spt-PT!2spt!4v1759596730829!5m2!1spt-PT!2spt" 
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
 
   <script>
     // Data do casamento
