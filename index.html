@@ -87,13 +87,17 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       z-index: 11;
     }
-    #rsvpForm input, #rsvpForm select, #rsvpForm button {
+    #rsvpForm input, 
+    #rsvpForm select, 
+    #rsvpForm button {
       font-family: 'Coolvetica', Arial, sans-serif;
       font-size: 18px;
       margin: 5px 0;
       padding: 8px 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
+      width: 100%;            /* agora adapta à largura da caixa */
+      box-sizing: border-box; /* garante que padding/borda não “rebentam” a largura */
     }
     #rsvpForm button {
       background: #f9a825;
@@ -114,7 +118,7 @@
         left: 5%;
         bottom: 35%;
         width: 25vw;
-        height: 17vh;
+        height: auto; /* altura ajusta ao conteúdo */
       }
     }
   </style>
