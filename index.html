@@ -76,13 +76,44 @@
       height: 100%;
       border: 0;
     }
-    /* Ajustes só para telemóvel */
+    /* FORMULÁRIO CONFIRMAÇÕES */
+    #rsvpForm {
+      position: absolute;
+      left: 10%;
+      bottom: 10%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 11;
+    }
+    #rsvpForm input, #rsvpForm select, #rsvpForm button {
+      font-family: 'Coolvetica', Arial, sans-serif;
+      font-size: 18px;
+      margin: 5px 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    #rsvpForm button {
+      background: #f9a825;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    /* Ajustes para telemóvel */
     @media (max-width: 768px) {
       #localizacao {
-        width: 30vw;     /* 70% da largura do ecrã */
-        height: 15vh;    /* 30% da altura do ecrã */
-        right: 65%;      /* mais para dentro da imagem */
-        bottom: 17%;      /* ajusta altura */
+        width: 30vw;
+        height: 15vh;
+        right: 65%;
+        bottom: 17%;
+      }
+      #rsvpForm {
+        left: 45%;
+        bottom: 50%;
+        width: 80%;
       }
     }
   </style>
@@ -99,6 +130,17 @@
       allowfullscreen="" loading="lazy">
     </iframe>
   </div>
+
+  <!-- Formulário RSVP -->
+  <form action="registo.php" method="POST" id="rsvpForm">
+    <input type="text" name="nome" placeholder="O teu nome" required><br>
+    <select name="resposta" required>
+      <option value="">-- Confirma a presença --</option>
+      <option value="Sim">✅ Sim, vou</option>
+      <option value="Não">❌ Não posso</option>
+    </select><br>
+    <button type="submit">Confirmar</button>
+  </form>
 
   <script>
     // Data do casamento
